@@ -46,28 +46,11 @@ Configured an isolated Active Directory lab with a Windows Server 2022 domain co
 6. Created `Computers.csv` for PC2 and PC3, then used `Join-Computers.ps1` with `Import-Csv` and `Add-Computer`.
 7. Validated the automated joins through script results, `Get-ADComputer`, Active Directory Users and Computers, and each client's domain-membership status.
 
-## Automation
+## Automation approach
 
-- [Join-Computers.ps1](Scripts/Join-Computers.ps1)
-- [Computers.csv](Scripts/Computers.csv)
+PC1 was joined using PowerShell, and PC2 and PC3 were joined remotely using `Add-Computer` with input from a CSV containing each computer's name and IP address. The script requested local and domain administrator credentials securely rather than storing passwords in plaintext. Both join operations returned `HasSucceeded = True`.
 
-The script reads the computer list from the CSV, prompts securely for local and domain administrator credentials, attempts each remote domain join, and requests a restart. **No passwords are stored in the repository.**
-
-Example input:
-
-```csv
-Name,IPAddress
-PC2,192.168.50.12
-PC3,192.168.50.13
-```
-
-On the domain controller, after placing the files under `C:\Scripts` and preparing remote administration prerequisites, the script was executed using:
-
-```powershell
-& "C:\Scripts\Join-Computers.ps1"
-```
-
-The lab execution returned `HasSucceeded = True` for both PC2 and PC3.
+The commands, verification results, and implementation details are documented in [Lab-Report.md](Lab-Report.md).
 
 ## Verification and evidence
 
@@ -85,11 +68,11 @@ The lab execution returned `HasSucceeded = True` for both PC2 and PC3.
 
 The final PowerShell checks returned `PartOfDomain = True` and `Domain = lab6.test` for all three Windows clients.
 
-## Documentation and evidence
+## Lab report
 
-The lab has a seven-page PDF report and 11 screenshots. The full image/PDF evidence files are prepared separately for upload; the source scripts, CSV and a text report are included here.
+[**Read the full lab report**](Lab-Report.md), including the procedure, configuration, command examples, captured results, limitations, and conclusion.
 
-[Read the lab report summary](Lab-Report.md)
+The separate submission PDF includes embedded screenshots; those images are not hosted individually in this repository.
 
 ## Skills demonstrated
 
