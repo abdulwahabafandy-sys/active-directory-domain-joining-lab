@@ -50,7 +50,7 @@ Configured an isolated Active Directory lab with a Windows Server 2022 domain co
 
 PC1 was joined using PowerShell, and PC2 and PC3 were joined remotely using `Add-Computer` with input from a CSV containing each computer's name and IP address. The script requested local and domain administrator credentials securely rather than storing passwords in plaintext. Both join operations returned `HasSucceeded = True`.
 
-The commands, verification results, and implementation details are documented in [Lab-Report.md](Lab-Report.md).
+The complete procedure, commands, and screenshot evidence are included in [Report.pdf](Report.pdf).
 
 ## Verification and evidence
 
@@ -70,9 +70,9 @@ The final PowerShell checks returned `PartOfDomain = True` and `Domain = lab6.te
 
 ## Lab report
 
-[**Read the full lab report**](Lab-Report.md), including the procedure, configuration, command examples, captured results, limitations, and conclusion.
+[**View the complete PDF lab report with 11 screenshots**](Report.pdf), including the procedure, configuration, command examples, verification results, and conclusion.
 
-The separate submission PDF includes embedded screenshots; those images are not hosted individually in this repository.
+The PDF contains the lab screenshots, so separate image files are not necessary.
 
 ## Skills demonstrated
 
